@@ -7,6 +7,13 @@ import './assets/font/iconfont.css'
 
 Vue.config.productionTip = false
 
+router.beforeEach((to, from, next) => {
+  next();
+});
+router.afterEach(()=>{
+  
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

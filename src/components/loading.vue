@@ -1,5 +1,5 @@
 <template>
-  <div class="load">
+  <div v-if="show" class="load">
     <svg
       class="spinner"
       width="40px"
@@ -17,32 +17,33 @@
         r="15"
       />
     </svg>
-    <div class="load-num" v-if="showProgress">{{progress}}%</div>
+    <div class="load-num" v-if="showProgressNum">{{progress}}%</div>
   </div>
 </template>
 <script>
 export default {
-    data(){
-        return {
-            showProgress:true,
-            progress: 0
-        }
-    }
+  data() {
+    return {
+      show: false,
+      showProgressNum: true,
+      progress: 0
+    };
+  }
 };
 </script>
 <style lang="less" scoped>
 @offset: 127;
 @duration: 1.4s;
 
-.load {    
-    position: fixed;
-    left: 50%;
-    margin-left: -20px;
-    top: 0;
-    text-align: center;
-    .load-num {
-        font-size: 16px;
-    }
+.load {
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  top: 0;
+  text-align: center;
+  .load-num {
+    font-size: 16px;
+  }
 }
 .spinner {
   animation: rotator @duration linear infinite;
@@ -85,7 +86,7 @@ export default {
     stroke-dashoffset: @offset;
   }
   50% {
-    stroke-dashoffset: @offset/2.5;
+    stroke-dashoffset: @offset / 2.5;
     transform: rotate(135deg);
   }
   100% {
