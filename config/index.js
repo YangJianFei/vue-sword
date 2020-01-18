@@ -50,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: process.env.NODE_ENV === "production" ? "/vue-sword/dist" : "/",
+    assetsPublicPath: process.env.NODE_ENV === "production" ? "./" : "/",
 
     /**
      * Source Maps
